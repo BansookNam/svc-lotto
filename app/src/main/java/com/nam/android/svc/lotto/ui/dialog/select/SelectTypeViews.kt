@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.dialog_select_type.view.*
 /**
  * @author bs.nam@navercorp.com
  */
-class SelectTypeViews : ActionViews<SelectTypeUseCase>() {
+class SelectTypeViews : ActionViews<SelectTypeDialogListener>() {
 
     override val layoutResId = R.layout.dialog_select_type
 

@@ -14,6 +14,8 @@ class RemoveDialog : SvcDialogFragment<RemoveViews, EmptyControlTower<*,*>, Remo
     override fun createControlTower() = EmptyControlTower(this, views)
     override fun createViews() = RemoveViews(this)
 
+    override val isFullScreenSupport = true
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val number = arguments?.get(KEY_NUMBER) as Int
@@ -22,7 +24,7 @@ class RemoveDialog : SvcDialogFragment<RemoveViews, EmptyControlTower<*,*>, Remo
     }
 
     companion object {
-        val KEY_NUMBER = BuildConfig.APPLICATION_ID + ".KEY_NUMBER"
+        const val KEY_NUMBER = BuildConfig.APPLICATION_ID + ".KEY_NUMBER"
 
         fun newInstance(number: Int): RemoveDialog {
             val dialog = RemoveDialog()

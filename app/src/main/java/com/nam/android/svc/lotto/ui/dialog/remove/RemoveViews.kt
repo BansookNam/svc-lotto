@@ -24,7 +24,7 @@ class RemoveViews(screen: Screen<*, *>) : Views() {
                  * so that we do not need to create CT(control tower) or ViewsAction (making class, interface is cost too)
                  * you can cast your screen like below and call the function directly
                  */
-                dialogListener.onClickRemoveMember()
+                dialogListener.onClickRemoveBall()
                 dialog.dismiss()
             }
         }

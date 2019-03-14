@@ -2,14 +2,14 @@ package com.nam.android.svc.lotto.ui.dialog.select
 
 import com.naver.android.svc.core.controltower.ControlTower
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialog
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeUseCase
+import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeViews
 
 /**
  * @author bs.nam@navercorp.com
  */
 class SelectTypeControlTower(screen: SelectTypeDialog, views: SelectTypeViews) : ControlTower<SelectTypeDialog, SelectTypeViews>(screen, views),
-    SelectTypeUseCase {
+    SelectTypeDialogListener {
 
     override fun onCreated() {
     }

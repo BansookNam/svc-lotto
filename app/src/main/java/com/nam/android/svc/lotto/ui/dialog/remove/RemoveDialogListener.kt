@@ -6,5 +6,5 @@ import com.naver.android.svc.core.views.ViewsAction
  * @author bs.nam@navercorp.com
  */
 interface RemoveDialogListener :ViewsAction{
-    fun onClickRemoveMember()
+    fun onClickRemoveBall()
 }

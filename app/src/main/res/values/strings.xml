@@ -12,4 +12,14 @@
     <string name="select_sq">연속적으로 뽑기</string>
     <string name="select_thumb">직접 뽑기</string>
     <string name="select_count_hint">몇개?</string>
+
+    <string name="candidate_count_is_smaller">뽑을 사람이 부족합니다.</string>
+    <string name="cannot_remove_candidate_count_is_smaller">뽑을 사람이 부족해서 삭제가 안됩니다.</string>
+
+    <string name="cannot_copy_winner">당첨자가 없어서 복사할게 없네요.</string>
+    <string name="cannot_copy_candidate">후보자가 없어서 복사할게 없네요.</string>
+
+    <string name="copy_complete_winner">당첨자가 복사되었습니다.</string>
+    <string name="copy_complete_candidate">후보자가 복사되었습니다.</string>
+
 </resources>

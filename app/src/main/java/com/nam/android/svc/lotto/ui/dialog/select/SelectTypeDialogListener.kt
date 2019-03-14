@@ -5,7 +5,7 @@ import com.naver.android.svc.core.views.ViewsAction
 /**
  * @author bs.nam@navercorp.com
  */
-interface SelectTypeUseCase : ViewsAction {
+interface SelectTypeDialogListener : ViewsAction {
     fun selectJustInTime(count: Int)
     fun selectSequentially(count: Int)
     fun selectWithMyThumb(count: Int)

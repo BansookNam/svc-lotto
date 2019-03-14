@@ -4,6 +4,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.nam.android.svc.lotto.R
 import com.naver.android.svc.core.screen.SvcActivity
+import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialog
 
 class MainActivity : SvcActivity<MainViews, MainControlTower>() {
     override fun createControlTower() = MainControlTower(this, views)
@@ -28,5 +29,11 @@ class MainActivity : SvcActivity<MainViews, MainControlTower>() {
             R.id.action_reload -> controlTower.onClickReload()
         }
         return true
+    }
+
+    fun showSelectTypeDialog() {
+        val dialog = SelectTypeDialog()
+        dialog.dialogListener = controlTower.selectTypeListener
+        showDialog(dialog)
     }
 }
