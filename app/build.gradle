@@ -23,8 +23,8 @@ android {
 }
 
 dependencies {
-    def svc_version = '0.1.0-androidx-beta1'
-    def androidx_version = '1.1.0-alpha04'
+    def svc_version = '0.1.1-androidx-beta01'
+    def androidx_version = '1.1.0-alpha03'
     def androidx_appcompat_version = '1.1.0-alpha03'
     def lifecycle_version = "2.1.0-alpha02"
     def coroutines_version = '1.1.0'

@@ -1,13 +1,9 @@
 package com.nam.android.svc.lotto.ui
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.nam.android.svc.lotto.R
+import com.naver.android.svc.core.screen.SvcActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : SvcActivity<MainViews, MainControlTower>() {
+    override fun createControlTower() = MainControlTower(this, views)
+    override fun createViews() = MainViews()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
 }
