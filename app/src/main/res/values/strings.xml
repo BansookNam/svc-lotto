@@ -6,4 +6,10 @@
     <string name="candidate">후보자</string>
     <string name="random">뽑기</string>
     <string name="winner">뽑힘</string>
+    <string name="remove_from_list">목록에서 제외하기</string>
+
+    <string name="select_just_in_time">한번에 뽑기</string>
+    <string name="select_sq">연속적으로 뽑기</string>
+    <string name="select_thumb">직접 뽑기</string>
+    <string name="select_count_hint">몇개?</string>
 </resources>
