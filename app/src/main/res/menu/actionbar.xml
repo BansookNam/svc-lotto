@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_reload"
+        android:icon="@drawable/back_reload"
+        android:orderInCategory="100"
+        android:title="Reload"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_copy"
+        android:icon="@drawable/copy"
+        android:orderInCategory="100"
+        android:title="Copy"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_shuffle"
+        android:icon="@drawable/shuffle"
+        android:orderInCategory="100"
+        android:title="Shuffle"
+        app:showAsAction="always" />
+
+</menu>

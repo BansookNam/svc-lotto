@@ -10,4 +10,16 @@ class MainControlTower(screen: MainActivity, views: MainViews) : ControlTower<Ma
     override fun onCreated() {
     }
 
+    fun onClickSuffle() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun onClickCopy() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun onClickReload() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }
