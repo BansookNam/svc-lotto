@@ -24,18 +24,33 @@ android {
 
 dependencies {
     def svc_version = '0.1.0-androidx-beta1'
+    def androidx_version = '1.1.0-alpha04'
+    def androidx_appcompat_version = '1.1.0-alpha03'
+    def lifecycle_version = "2.1.0-alpha02"
+    def coroutines_version = '1.1.0'
+    def anko_version = '0.10.8'
 
     //--base
     implementation "com.naver.android.svc:svc:$svc_version"
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    //--kotlin
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation "org.jetbrains.anko:anko:$anko_version"
 
     //--view
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
+    implementation "com.google.android.material:material:$androidx_version"
 
     //--default
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0-alpha04'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
 }
