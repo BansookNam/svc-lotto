@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">svc-lotto</string>
+
+    <string name="candidate_count">후보 %d</string>
+    <string name="selected_count">뽑힘 %d</string>
+    <string name="candidate">후보자</string>
+    <string name="random">뽑기</string>
+    <string name="winner">뽑힘</string>
 </resources>
