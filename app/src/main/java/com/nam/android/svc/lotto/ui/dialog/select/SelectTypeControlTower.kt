@@ -1,5 +1,6 @@
 package com.nam.android.svc.lotto.ui.dialog.select
 
+import com.nam.android.svc.lotto.R
 import com.naver.android.annotation.ControlTower
 import com.naver.android.annotation.RequireListener
 import com.naver.android.annotation.RequireScreen
@@ -33,6 +34,7 @@ class SelectTypeControlTower : SVC_SelectTypeControlTower(),
 
     override fun selectWithMyThumb(count: Int) {
         screen.dialogListener.selectWithMyThumb(count)
+        showToast(R.string.click_pick)
         screen.dismiss()
     }
 
