@@ -1,15 +1,19 @@
 package com.naver.android.svc.svcpeoplelotto.ui.dialog.select
 
 import com.nam.android.svc.lotto.ui.dialog.select.SelectTypeControlTower
-import com.naver.android.svc.core.screen.SvcDialogFragment
+import com.naver.android.annotation.RequireControlTower
+import com.naver.android.annotation.RequireListener
+import com.naver.android.annotation.RequireViews
 
 /**
  * @author bs.nam@navercorp.com
  */
-class SelectTypeDialog : SvcDialogFragment<SelectTypeViews, SelectTypeControlTower, SelectTypeDialogListener>() {
 
-    override fun createControlTower() = SelectTypeControlTower(this, views)
-    override fun createViews() = SelectTypeViews()
+@com.naver.android.annotation.SvcDialogFragment
+@RequireViews(SelectTypeViews::class)
+@RequireControlTower(SelectTypeControlTower::class)
+@RequireListener(SelectTypeDialogListener::class)
+class SelectTypeDialog : SVC_SelectTypeDialog() {
 
     override val isFullScreenSupport = true
 }

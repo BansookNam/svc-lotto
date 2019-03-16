@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.dialog_remove.view.*
 /**
  * @author bs.nam@navercorp.com
  */
-class RemoveViews(screen: Screen<*, *>) : Views() {
+class RemoveViews : Views() {
 
     override val layoutResId = R.layout.dialog_remove
 

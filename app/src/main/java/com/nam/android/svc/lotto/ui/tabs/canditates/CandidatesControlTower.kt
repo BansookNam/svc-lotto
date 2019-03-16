@@ -5,16 +5,21 @@ import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.MainViewModel
 import com.nam.android.svc.lotto.ui.tabs.BallViewsAction
 import com.nam.android.svc.lotto.vo.Ball
-import com.naver.android.svc.core.controltower.ControlTower
+import com.naver.android.annotation.ControlTower
+import com.naver.android.annotation.RequireScreen
+import com.naver.android.annotation.RequireViews
 
 /**
  * @author bs.nam@navercorp.com
  */
-class CandidatesControlTower(screen: CandidatesFragment, views: CandidatesViews) :
-    ControlTower<CandidatesFragment, CandidatesViews>(screen, views),
+@ControlTower
+@RequireViews(CandidatesViews::class)
+@RequireScreen(CandidatesFragment::class)
+class CandidatesControlTower :
+    SVC_CandidatesControlTower(),
     BallViewsAction {
 
-    val vm = ViewModelProviders.of(screen.activity!!).get(MainViewModel::class.java)
+    private val vm by lazy { ViewModelProviders.of(screen.activity!!).get(MainViewModel::class.java) }
 
     override fun onCreated() {
     }

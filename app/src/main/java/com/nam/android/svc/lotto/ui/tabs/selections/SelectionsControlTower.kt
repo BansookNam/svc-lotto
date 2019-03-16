@@ -4,16 +4,20 @@ import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.ui.MainViewModel
 import com.nam.android.svc.lotto.ui.tabs.BallViewsAction
 import com.nam.android.svc.lotto.vo.Ball
-import com.naver.android.svc.core.controltower.ControlTower
+import com.naver.android.annotation.ControlTower
+import com.naver.android.annotation.RequireScreen
+import com.naver.android.annotation.RequireViews
 
 /**
  * @author bs.nam@navercorp.com
  */
-class SelectionsControlTower(screen: SelectionsFragment, views: SelectionsViews) :
-    ControlTower<SelectionsFragment, SelectionsViews>(screen, views),
+@ControlTower
+@RequireScreen(SelectionsFragment::class)
+@RequireViews(SelectionsViews::class)
+class SelectionsControlTower : SVC_SelectionsControlTower(),
     BallViewsAction {
 
-    val vm = ViewModelProviders.of(screen.activity!!).get(MainViewModel::class.java)
+    private val vm by lazy { ViewModelProviders.of(screen.activity!!).get(MainViewModel::class.java) }
 
     override fun onCreated() {
     }

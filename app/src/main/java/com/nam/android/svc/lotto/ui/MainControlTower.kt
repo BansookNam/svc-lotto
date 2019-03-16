@@ -8,7 +8,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.vo.Ball
 import com.nam.android.svc.lotto.vo.BallPool
-import com.naver.android.svc.core.controltower.ControlTower
+import com.naver.android.annotation.ControlTower
+import com.naver.android.annotation.RequireScreen
+import com.naver.android.annotation.RequireViews
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
 import com.navercorp.android.selective.tools.launch
@@ -21,18 +23,22 @@ import java.util.*
 /**
  * @author bs.nam@navercorp.com
  */
-class MainControlTower(screen: MainActivity, views: MainViews) : ControlTower<MainActivity, MainViews>(screen, views),
+
+@ControlTower
+@RequireScreen(MainActivity::class)
+@RequireViews(MainViews::class)
+class MainControlTower : SVC_MainControlTower(),
     MainViewsAction {
 
     var type: SelectMode? = null
     var count = 0
     var job: Job? = null
 
+    private val vm by lazy { ViewModelProviders.of(screen).get(MainViewModel::class.java) }
+
     override fun onViewPagerTouchUp() {
         vm.selectedBall.value = null
     }
-
-    private val vm = ViewModelProviders.of(screen).get(MainViewModel::class.java)
 
     val selectTypeListener = object : SelectTypeDialogListener {
         override fun selectJustInTime(count: Int) {

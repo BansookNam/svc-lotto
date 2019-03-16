@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    def svc_version = '0.1.1-androidx-beta01'
+    def svc_version = '1.0.0-beta07'
     def androidx_version = '1.1.0-alpha03'
     def androidx_appcompat_version = '1.1.0-alpha03'
     def lifecycle_version = "2.1.0-alpha02"
@@ -32,6 +32,8 @@ dependencies {
 
     //--base
     implementation "com.naver.android.svc:svc:$svc_version"
+    implementation "com.naver.android.svc:svc-annotation:$svc_version"
+    kapt "com.naver.android.svc:svc-compiler:$svc_version"
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
