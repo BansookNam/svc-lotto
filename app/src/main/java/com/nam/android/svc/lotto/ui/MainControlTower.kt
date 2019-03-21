@@ -1,6 +1,8 @@
 package com.nam.android.svc.lotto.ui
 
 import androidx.lifecycle.ViewModelProviders
+import com.nam.android.svc.lotto.ui.controller.ClipBoardCopyController
+import com.nam.android.svc.lotto.ui.controller.RemoveBallController
 import com.nam.android.svc.lotto.ui.dialog.select.SelectDialogCreator
 import com.nam.android.svc.lotto.vo.Ball
 import com.nam.android.svc.lotto.vo.BallPool

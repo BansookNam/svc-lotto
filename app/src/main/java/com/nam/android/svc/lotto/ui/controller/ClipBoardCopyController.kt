@@ -1,9 +1,10 @@
-package com.nam.android.svc.lotto.ui
+package com.nam.android.svc.lotto.ui.controller
 
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import com.nam.android.svc.lotto.R
+import com.nam.android.svc.lotto.ui.MainViewModel
 
 /**
  * @author bs.nam@navercorp.com
@@ -11,7 +12,7 @@ import com.nam.android.svc.lotto.R
 interface ClipBoardCopyController {
     val vm: MainViewModel
     val context: Context?
-    val views: MainViews
+    val views: IndexProvideViews
 
     fun copy() {
         val currentItem = views.getCurrentItem()
