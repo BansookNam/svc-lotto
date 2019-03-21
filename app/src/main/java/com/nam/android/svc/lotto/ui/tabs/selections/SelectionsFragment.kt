@@ -1,15 +1,12 @@
 package com.nam.android.svc.lotto.ui.tabs.selections
 
-import com.naver.android.annotation.RequireControlTower
-import com.naver.android.annotation.RequireViews
-import com.naver.android.annotation.SvcFragment
+import com.naver.android.svc.core.screen.SvcFragment
 
 /**
  * @author bs.nam@navercorp.com
  */
-@SvcFragment
-@RequireViews(SelectionsViews::class)
-@RequireControlTower(SelectionsControlTower::class)
-class SelectionsFragment : SVC_SelectionsFragment(){
+class SelectionsFragment : SvcFragment<SelectionsViews, SelectionsControlTower>() {
 
+    override fun createControlTower() = SelectionsControlTower(this, views)
+    override fun createViews() = SelectionsViews()
 }

@@ -1,4 +1,4 @@
-package com.nam.android.svc.lotto.ui.tabs.selections
+package com.nam.android.svc.lotto.ui.tabs.canditates
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProviders

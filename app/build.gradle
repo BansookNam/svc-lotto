@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    def svc_version = '1.0.0-beta12'
+    def svc_version = '1.0.0-beta04'
     def androidx_version = '1.1.0-alpha03'
     def androidx_appcompat_version = '1.1.0-alpha03'
     def lifecycle_version = "2.1.0-alpha02"
@@ -31,8 +31,7 @@ dependencies {
     def anko_version = '0.10.8'
 
     //--base
-    implementation "com.naver.android.svc:svc:$svc_version"
-    kapt "com.naver.android.svc:svc-compiler:$svc_version"
+    implementation "com.naver.android.svc:svc-generic:$svc_version"
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 

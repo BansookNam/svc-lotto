@@ -3,7 +3,7 @@ package com.nam.android.svc.lotto.ui
 import android.util.Log
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.vo.Ball
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
+import com.nam.android.svc.lotto.ui.dialog.select.SelectMode
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import org.jetbrains.anko.doAsync

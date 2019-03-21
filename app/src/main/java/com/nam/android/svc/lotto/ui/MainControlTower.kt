@@ -4,10 +4,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.ui.dialog.select.SelectDialogCreator
 import com.nam.android.svc.lotto.vo.Ball
 import com.nam.android.svc.lotto.vo.BallPool
-import com.naver.android.annotation.ControlTower
-import com.naver.android.annotation.RequireScreen
-import com.naver.android.annotation.RequireViews
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
+import com.naver.android.svc.core.controltower.ControlTower
+import com.nam.android.svc.lotto.ui.dialog.select.SelectMode
 import kotlinx.coroutines.Job
 import java.util.*
 
@@ -15,10 +13,7 @@ import java.util.*
  * @author bs.nam@navercorp.com
  */
 
-@ControlTower
-@RequireScreen(MainActivity::class)
-@RequireViews(MainViews::class)
-class MainControlTower : SVC_MainControlTower(),
+class MainControlTower(screen: MainActivity, views: MainViews) : ControlTower<MainActivity, MainViews>(screen, views),
     MainViewsAction,
     SelectDialogCreator,
     RemoveBallController,

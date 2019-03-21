@@ -1,21 +1,18 @@
-package com.naver.android.svc.svcpeoplelotto.ui.dialog.member
+package com.nam.android.svc.lotto.ui.dialog.remove
 
 import android.os.Bundle
 import android.view.View
 import com.nam.android.svc.lotto.BuildConfig
-import com.naver.android.annotation.RequireControlTower
-import com.naver.android.annotation.RequireListener
-import com.naver.android.annotation.RequireViews
 import com.naver.android.svc.core.controltower.EmptyControlTower
+import com.naver.android.svc.core.screen.SvcDialogFragment
 
 /**
  * @author bs.nam@navercorp.com
  */
-@com.naver.android.annotation.SvcDialogFragment
-@RequireViews(RemoveViews::class)
-@RequireControlTower(EmptyControlTower::class)
-@RequireListener(RemoveDialogListener::class)
-class RemoveDialog : SVC_RemoveDialog() {
+class RemoveDialog : SvcDialogFragment<RemoveViews, EmptyControlTower<*, *>, RemoveDialogListener>() {
+
+    override fun createControlTower() = EmptyControlTower(this, views)
+    override fun createViews() = RemoveViews()
 
     override val isFullScreenSupport = true
 

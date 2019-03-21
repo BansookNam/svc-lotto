@@ -11,10 +11,10 @@ import com.nam.android.svc.lotto.R
 interface ClipBoardCopyController {
     val vm: MainViewModel
     val context: Context?
-    fun getViews(): MainViews
+    val views: MainViews
 
     fun copy() {
-        val currentItem = getViews().getCurrentItem()
+        val currentItem = views.getCurrentItem()
 
         val copyList = if (currentItem == 0) vm.candidates.value else vm.selections.value
 

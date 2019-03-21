@@ -1,22 +1,13 @@
 package com.nam.android.svc.lotto.ui.dialog.select
 
 import com.nam.android.svc.lotto.R
-import com.naver.android.annotation.ControlTower
-import com.naver.android.annotation.RequireListener
-import com.naver.android.annotation.RequireScreen
-import com.naver.android.annotation.RequireViews
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialog
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeViews
+import com.naver.android.svc.core.controltower.ControlTower
 
 /**
  * @author bs.nam@navercorp.com
  */
-@ControlTower
-@RequireScreen(SelectTypeDialog::class)
-@RequireViews(SelectTypeViews::class)
-@RequireListener(SelectTypeDialogListener::class)
-class SelectTypeControlTower : SVC_SelectTypeControlTower(),
+class SelectTypeControlTower(screen: SelectTypeDialog, views: SelectTypeViews) :
+    ControlTower<SelectTypeDialog, SelectTypeViews>(screen, views),
     SelectTypeDialogListener {
 
     override fun onCreated() {

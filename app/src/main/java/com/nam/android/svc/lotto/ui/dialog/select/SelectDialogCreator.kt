@@ -2,8 +2,6 @@ package com.nam.android.svc.lotto.ui.dialog.select
 
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.MainViewModel
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
 import com.navercorp.android.selective.tools.launch
 import kotlinx.coroutines.Job
 
@@ -17,7 +15,7 @@ interface SelectDialogCreator {
     var job: Job?
     val vm: MainViewModel
 
-    fun createDialogListener():SelectTypeDialogListener {
+    fun createDialogListener(): SelectTypeDialogListener {
         return object : SelectTypeDialogListener {
             override fun selectJustInTime(count: Int) {
                 if (checkCandidatesCountNotValid(count)) {

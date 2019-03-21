@@ -1,4 +1,4 @@
-package com.naver.android.svc.svcpeoplelotto.ui.dialog.member
+package com.nam.android.svc.lotto.ui.dialog.remove
 
 import com.naver.android.svc.core.views.ViewsAction
 

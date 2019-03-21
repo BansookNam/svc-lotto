@@ -1,19 +1,17 @@
-package com.nam.android.svc.lotto.ui.tabs.selections
+package com.nam.android.svc.lotto.ui.tabs.canditates
 
+import com.nam.android.svc.lotto.ui.dialog.remove.RemoveDialog
+import com.nam.android.svc.lotto.ui.dialog.remove.RemoveDialogListener
 import com.nam.android.svc.lotto.vo.Ball
-import com.naver.android.annotation.RequireControlTower
-import com.naver.android.annotation.RequireViews
-import com.naver.android.annotation.SvcFragment
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.member.RemoveDialog
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.member.RemoveDialogListener
+import com.naver.android.svc.core.screen.SvcFragment
 
 /**
  * @author bs.nam@navercorp.com
  */
-@SvcFragment
-@RequireViews(CandidatesViews::class)
-@RequireControlTower(CandidatesControlTower::class)
-class CandidatesFragment : SVC_CandidatesFragment() {
+class CandidatesFragment : SvcFragment<CandidatesViews, CandidatesControlTower>() {
+
+    override fun createControlTower() = CandidatesControlTower(this, views)
+    override fun createViews() = CandidatesViews()
 
     fun showMemberDialog(ball: Ball) {
         val dialog = RemoveDialog.newInstance(ball.number)
