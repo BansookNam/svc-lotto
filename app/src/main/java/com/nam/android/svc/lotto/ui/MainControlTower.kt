@@ -6,14 +6,13 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.R
+import com.nam.android.svc.lotto.ui.dialog.select.SelectDialogCreator
 import com.nam.android.svc.lotto.vo.Ball
 import com.nam.android.svc.lotto.vo.BallPool
 import com.naver.android.annotation.ControlTower
 import com.naver.android.annotation.RequireScreen
 import com.naver.android.annotation.RequireViews
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
-import com.navercorp.android.selective.tools.launch
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import org.jetbrains.anko.doAsync
@@ -28,53 +27,22 @@ import java.util.*
 @RequireScreen(MainActivity::class)
 @RequireViews(MainViews::class)
 class MainControlTower : SVC_MainControlTower(),
-    MainViewsAction {
+    MainViewsAction,
+    SelectDialogCreator {
 
-    var type: SelectMode? = null
-    var count = 0
-    var job: Job? = null
+    override var type: SelectMode? = null
+    override var count = 0
+    override var job: Job? = null
 
-    private val vm by lazy { ViewModelProviders.of(screen).get(MainViewModel::class.java) }
+    override val vm by lazy { ViewModelProviders.of(screen).get(MainViewModel::class.java) }
 
     override fun onViewPagerTouchUp() {
         vm.selectedBall.value = null
     }
 
-    val selectTypeListener = object : SelectTypeDialogListener {
-        override fun selectJustInTime(count: Int) {
-            if (checkCandidatesCountNotValid(count)) {
-                return
-            }
+    val selectTypeListener = createDialogListener()
 
-            type = SelectMode.JIT
-            vm.selectCount = count
-            job = launch {
-                removeRandoms()
-            }
-        }
-
-        override fun selectSequentially(count: Int) {
-            if (checkCandidatesCountNotValid(count)) {
-                return
-            }
-            type = SelectMode.SQ
-            vm.selectCount = count
-            job = launch {
-                startRemovingSQ(800)
-            }
-        }
-
-        override fun selectWithMyThumb(count: Int) {
-            if (checkCandidatesCountNotValid(count)) {
-                return
-            }
-            type = SelectMode.THUMB
-            vm.selectCount = count
-        }
-
-    }
-
-    private fun checkCandidatesCountNotValid(count: Int): Boolean {
+    override fun checkCandidatesCountNotValid(count: Int): Boolean {
         val listSize = vm.candidates.value?.size ?: 0
         return if (listSize < count) {
             showToast(R.string.candidate_count_is_smaller)
@@ -96,7 +64,7 @@ class MainControlTower : SVC_MainControlTower(),
     }
 
 
-    private suspend fun startRemovingSQ(delayTime: Long) {
+    override suspend fun startRemovingSQ(delayTime: Long) {
         for (i in 1..vm.selectCount) {
             delay(delayTime)
             doAsync {
@@ -121,7 +89,7 @@ class MainControlTower : SVC_MainControlTower(),
         }
     }
 
-    private fun removeRandoms() {
+    override fun removeRandoms() {
         doAsync {
             val winnerLists = ArrayList<Ball>()
             val candidatelist = vm.candidates.value ?: return@doAsync
