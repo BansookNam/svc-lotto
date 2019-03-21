@@ -71,7 +71,7 @@ class MainControlTower : SVC_MainControlTower(),
         }
     }
 
-    override fun onClickRandom() {
+    override fun onClickSelect() {
         if (type == null) {
             screen.showSelectTypeDialog()
             return

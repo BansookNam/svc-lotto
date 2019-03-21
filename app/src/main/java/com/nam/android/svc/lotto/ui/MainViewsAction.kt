@@ -5,6 +5,6 @@ import com.naver.android.svc.core.views.ViewsAction
 /**
  * @author bs.nam@navercorp.com
  */
-interface MainViewsAction:ViewsAction{
-    fun onClickRandom()
+interface MainViewsAction : ViewsAction {
+    fun onClickSelect()
 }

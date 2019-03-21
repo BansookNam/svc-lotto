@@ -4,8 +4,8 @@
     <string name="candidate_count">후보 %d</string>
     <string name="selected_count">뽑힘 %d</string>
     <string name="candidate">후보자</string>
-    <string name="random">뽑기</string>
-    <string name="winner">뽑힘</string>
+    <string name="select">뽑기</string>
+    <string name="selected">뽑힘</string>
     <string name="remove_from_list">목록에서 제외하기</string>
 
     <string name="select_just_in_time">한번에 뽑기</string>

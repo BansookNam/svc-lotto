@@ -7,13 +7,13 @@
         android:title="@string/candidate" />
 
     <item
-        android:id="@+id/navigation_random"
+        android:id="@+id/navigation_select"
         android:icon="@drawable/ticket_small"
-        android:title="@string/random" />
+        android:title="@string/select" />
 
     <item
         android:id="@+id/navigation_winner"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/winner" />
+        android:title="@string/selected" />
 
 </menu>

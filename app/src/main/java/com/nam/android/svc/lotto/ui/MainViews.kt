@@ -130,8 +130,8 @@ class MainViews : ActionViews<MainViewsAction>(){
         withRootView {
             navigation.setOnNavigationItemSelectedListener {
                 when (it.itemId) {
-                    R.id.navigation_random -> {
-                        viewsAction.onClickRandom()
+                    R.id.navigation_select -> {
+                        viewsAction.onClickSelect()
                         removeCallbacks(returnToSelectedTab)
                         postDelayed(returnToSelectedTab, 700)
                     }
