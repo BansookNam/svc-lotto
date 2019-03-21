@@ -57,14 +57,6 @@ class MainControlTower : SVC_MainControlTower(),
         }
     }
 
-    override fun removeRandoms() {
-        super.removeRandoms()
-    }
-
-    override suspend fun startRemovingSQ(delayTime: Long) {
-        super.startRemovingSQ(delayTime)
-    }
-
     fun onClickShuffle() {
         vm.candidates.value?.shuffle()
         vm.candidates.value = vm.candidates.value
@@ -82,5 +74,11 @@ class MainControlTower : SVC_MainControlTower(),
         vm.selections.value = ArrayList()
     }
 
+    override fun removeRandoms() {
+        super.removeRandoms()
+    }
 
+    override suspend fun startRemovingSQ(delayTime: Long) {
+        super.startRemovingSQ(delayTime)
+    }
 }
