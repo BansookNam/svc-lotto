@@ -36,10 +36,6 @@ class MainControlTower : SVC_MainControlTower(),
 
     override val vm by lazy { ViewModelProviders.of(screen).get(MainViewModel::class.java) }
 
-    override fun onViewPagerTouchUp() {
-        vm.selectedBall.value = null
-    }
-
     val selectTypeListener = createDialogListener()
 
     override fun checkCandidatesCountNotValid(count: Int): Boolean {

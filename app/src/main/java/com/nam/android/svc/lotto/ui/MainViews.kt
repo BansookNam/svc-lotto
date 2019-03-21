@@ -59,7 +59,7 @@ class MainViews : ActionViews<MainViewsAction>(){
             viewPager.setOnTouchListener { _, motionEvent ->
 
                 if (motionEvent.action == MotionEvent.ACTION_MOVE) {
-                    viewsAction.onViewPagerTouchUp()
+                    clearSelectedBall()
                     return@setOnTouchListener false
                 }
 
@@ -69,6 +69,10 @@ class MainViews : ActionViews<MainViewsAction>(){
         }
         observeSelectedCandidate()
         observeCount()
+    }
+
+    private fun clearSelectedBall() {
+        vm.selectedBall.value = null
     }
 
     private fun observeCount() {

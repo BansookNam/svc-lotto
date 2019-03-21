@@ -6,6 +6,5 @@ import com.naver.android.svc.core.views.ViewsAction
  * @author bs.nam@navercorp.com
  */
 interface MainViewsAction:ViewsAction{
-    fun onViewPagerTouchUp()
     fun onClickRandom()
 }
