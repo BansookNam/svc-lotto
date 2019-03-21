@@ -1,7 +1,8 @@
-package com.nam.android.svc.lotto.ui
+package com.nam.android.svc.lotto.ui.controller
 
 import android.util.Log
 import com.nam.android.svc.lotto.R
+import com.nam.android.svc.lotto.ui.MainViewModel
 import com.nam.android.svc.lotto.vo.Ball
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
 import kotlinx.coroutines.Job
