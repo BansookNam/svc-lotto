@@ -3,7 +3,6 @@ package com.nam.android.svc.lotto.ui
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.dialog.select.SelectDialogCreator
@@ -14,9 +13,6 @@ import com.naver.android.annotation.RequireScreen
 import com.naver.android.annotation.RequireViews
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 import java.util.*
 
 /**
@@ -28,7 +24,8 @@ import java.util.*
 @RequireViews(MainViews::class)
 class MainControlTower : SVC_MainControlTower(),
     MainViewsAction,
-    SelectDialogCreator {
+    SelectDialogCreator,
+    RemoveBallController {
 
     override var type: SelectMode? = null
     override var count = 0
@@ -49,27 +46,6 @@ class MainControlTower : SVC_MainControlTower(),
         })
     }
 
-    override fun checkCandidatesCountNotValid(count: Int): Boolean {
-        val listSize = vm.candidates.value?.size ?: 0
-        return if (listSize < count) {
-            showToast(R.string.candidate_count_is_smaller)
-            true
-        } else {
-            false
-        }
-    }
-
-    override suspend fun startRemovingSQ(delayTime: Long) {
-        for (i in 1..vm.selectCount) {
-            delay(delayTime)
-            doAsync {
-                uiThread {
-                    removeRandomOne()
-                }
-            }
-        }
-    }
-
     override fun onClickSelect() {
         if (type == null) {
             screen.showSelectTypeDialog()
@@ -85,54 +61,31 @@ class MainControlTower : SVC_MainControlTower(),
     }
 
     override fun removeRandoms() {
-        doAsync {
-            val winnerLists = ArrayList<Ball>()
-            val candidatelist = vm.candidates.value ?: return@doAsync
-            for (i in 0 until vm.selectCount) {
-                val indexMax = candidatelist.size
-                val random = Random()
-                val randomIndex = (random.nextFloat() * indexMax).toInt()
-                val removedBall = candidatelist.removeAt(randomIndex)
-                winnerLists.add(removedBall)
-            }
-            uiThread {
-                vm.candidates.value = ArrayList(candidatelist)
-                vm.selections.value?.addAll(winnerLists)
-                vm.selections.value = vm.selections.value
-                finishRandom()
-            }
+        super.removeRandoms()
+    }
 
+    override suspend fun startRemovingSQ(delayTime: Long) {
+        super.startRemovingSQ(delayTime)
+    }
+
+    override fun checkCandidatesCountNotValid(count: Int): Boolean {
+        val listSize = vm.candidates.value?.size ?: 0
+        return if (listSize < count) {
+            showToast(R.string.candidate_count_is_smaller)
+            true
+        } else {
+            false
         }
     }
 
-    private fun removeRandomOne() {
-        val list = vm.candidates.value ?: return
-        val indexMax = list.size
-        val random = Random()
-        val randomIndex = (random.nextFloat() * indexMax).toInt()
-        val removedMember = list.removeAt(randomIndex)
-        Log.d(TAG, "size=${list.size}, randomIndex=$randomIndex")
-        vm.candidates.value = ArrayList(list)
-        val winnerList = vm.selections.value ?: ArrayList()
-        winnerList.add(removedMember)
-        vm.selectedBall.value = removedMember
-        vm.selections.value = ArrayList(winnerList)
-
-        count++
-
-        if (count == vm.selectCount) {
-            finishRandom()
-        }
-    }
-
-    private fun finishRandom() {
+    override fun finishRandom() {
         showToast("뽑기 완료!")
         type = null
         vm.selectCount = 0
         count = 0
     }
 
-    fun onClickSuffle() {
+    fun onClickShuffle() {
         vm.candidates.value?.shuffle()
         vm.candidates.value = vm.candidates.value
     }

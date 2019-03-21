@@ -28,7 +28,7 @@ class MainActivity : SVC_MainActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_shuffle -> controlTower.onClickSuffle()
+            R.id.action_shuffle -> controlTower.onClickShuffle()
             R.id.action_copy -> controlTower.onClickCopy()
             R.id.action_reload -> controlTower.onClickReload()
         }
