@@ -1,5 +1,6 @@
 package com.nam.android.svc.lotto.ui.dialog.select
 
+import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.MainViewModel
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
@@ -51,7 +52,17 @@ interface SelectDialogCreator {
         }
     }
 
-    fun checkCandidatesCountNotValid(count:Int):Boolean
+    fun checkCandidatesCountNotValid(count: Int): Boolean {
+        val listSize = vm.candidates.value?.size ?: 0
+        return if (listSize < count) {
+            showToast(R.string.candidate_count_is_smaller)
+            true
+        } else {
+            false
+        }
+    }
+
+    fun showToast(resId: Int)
     fun removeRandoms()
     suspend fun startRemovingSQ(delayTime: Long)
 }

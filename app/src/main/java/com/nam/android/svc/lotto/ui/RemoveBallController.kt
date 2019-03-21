@@ -1,6 +1,7 @@
 package com.nam.android.svc.lotto.ui
 
 import android.util.Log
+import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.vo.Ball
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
 import kotlinx.coroutines.Job
@@ -71,5 +72,13 @@ interface RemoveBallController {
         }
     }
 
-    fun finishRandom()
+    fun finishRandom() {
+        showToast(R.string.finishSelecting)
+        type = null
+        vm.selectCount = 0
+        count = 0
+    }
+
+    fun showToast(resId: Int)
+
 }

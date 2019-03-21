@@ -68,23 +68,6 @@ class MainControlTower : SVC_MainControlTower(),
         super.startRemovingSQ(delayTime)
     }
 
-    override fun checkCandidatesCountNotValid(count: Int): Boolean {
-        val listSize = vm.candidates.value?.size ?: 0
-        return if (listSize < count) {
-            showToast(R.string.candidate_count_is_smaller)
-            true
-        } else {
-            false
-        }
-    }
-
-    override fun finishRandom() {
-        showToast("뽑기 완료!")
-        type = null
-        vm.selectCount = 0
-        count = 0
-    }
-
     fun onClickShuffle() {
         vm.candidates.value?.shuffle()
         vm.candidates.value = vm.candidates.value

@@ -22,5 +22,6 @@
     <string name="copy_complete_winner">당첨자가 복사되었습니다.</string>
     <string name="copy_complete_candidate">후보자가 복사되었습니다.</string>
     <string name="click_pick">아래 뽑기 버튼을 눌러보세요!</string>
+    <string name="finishSelecting">뽑기 완료</string>
 
 </resources>
