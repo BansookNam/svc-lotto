@@ -1,10 +1,6 @@
 package com.nam.android.svc.lotto.ui
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
 import androidx.lifecycle.ViewModelProviders
-import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.dialog.select.SelectDialogCreator
 import com.nam.android.svc.lotto.vo.Ball
 import com.nam.android.svc.lotto.vo.BallPool
@@ -25,7 +21,8 @@ import java.util.*
 class MainControlTower : SVC_MainControlTower(),
     MainViewsAction,
     SelectDialogCreator,
-    RemoveBallController {
+    RemoveBallController,
+    ClipBoardCopyController {
 
     override var type: SelectMode? = null
     override var count = 0
@@ -74,31 +71,7 @@ class MainControlTower : SVC_MainControlTower(),
     }
 
     fun onClickCopy() {
-        val currentItem = views.getCurrentItem()
-
-        val copyList = if (currentItem == 0) vm.candidates.value else vm.selections.value
-
-        if (copyList?.size == 0) {
-            when (currentItem) {
-                0 -> showToast(R.string.cannot_copy_candidate)
-                1 -> showToast(R.string.cannot_copy_winner)
-            }
-            return
-        }
-
-        var copyString = ""
-        copyList?.forEach {
-            copyString += it.number.toString() + ", "
-        }
-
-        val clipboard = context?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-        val clip = ClipData.newPlainText("members", copyString)
-        clipboard.primaryClip = clip
-
-        when (currentItem) {
-            0 -> showToast(R.string.copy_complete_candidate)
-            1 -> showToast(R.string.copy_complete_winner)
-        }
+        super.copy()
     }
 
     fun onClickReload() {
