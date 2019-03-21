@@ -38,16 +38,6 @@ class MainControlTower : SVC_MainControlTower(),
 
     val selectTypeListener = createDialogListener()
 
-    override fun checkCandidatesCountNotValid(count: Int): Boolean {
-        val listSize = vm.candidates.value?.size ?: 0
-        return if (listSize < count) {
-            showToast(R.string.candidate_count_is_smaller)
-            true
-        } else {
-            false
-        }
-    }
-
     override fun onCreated() {
         val candidates = BallPool.createBalls()
 
@@ -59,6 +49,15 @@ class MainControlTower : SVC_MainControlTower(),
         })
     }
 
+    override fun checkCandidatesCountNotValid(count: Int): Boolean {
+        val listSize = vm.candidates.value?.size ?: 0
+        return if (listSize < count) {
+            showToast(R.string.candidate_count_is_smaller)
+            true
+        } else {
+            false
+        }
+    }
 
     override suspend fun startRemovingSQ(delayTime: Long) {
         for (i in 1..vm.selectCount) {
