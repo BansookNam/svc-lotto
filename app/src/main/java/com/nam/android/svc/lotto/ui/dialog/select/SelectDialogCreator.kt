@@ -2,7 +2,6 @@ package com.nam.android.svc.lotto.ui.dialog.select
 
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.MainViewModel
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
 import com.navercorp.android.selective.tools.launch
 import kotlinx.coroutines.Job
@@ -14,7 +13,7 @@ interface SelectDialogCreator {
 
     var type: SelectMode?
     var count: Int
-    var job: Job?
+    var removeJob: Job?
     val vm: MainViewModel
 
     fun createDialogListener():SelectTypeDialogListener {
@@ -26,7 +25,7 @@ interface SelectDialogCreator {
 
                 type = SelectMode.JIT
                 vm.selectCount = count
-                job = launch {
+                removeJob = launch {
                     removeRandoms()
                 }
             }
@@ -37,7 +36,7 @@ interface SelectDialogCreator {
                 }
                 type = SelectMode.SQ
                 vm.selectCount = count
-                job = launch {
+                removeJob = launch {
                     startRemovingSQ(800)
                 }
             }

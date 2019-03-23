@@ -3,9 +3,8 @@ package com.nam.android.svc.lotto.ui.controller
 import android.util.Log
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.MainViewModel
+import com.nam.android.svc.lotto.ui.dialog.select.SelectMode
 import com.nam.android.svc.lotto.vo.Ball
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectMode
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
@@ -18,7 +17,6 @@ interface RemoveBallController {
 
     var type: SelectMode?
     var count: Int
-    var job: Job?
     val vm: MainViewModel
 
     suspend fun startRemovingSQ(delayTime: Long) {
