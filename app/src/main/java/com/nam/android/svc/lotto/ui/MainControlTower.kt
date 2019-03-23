@@ -3,11 +3,12 @@ package com.nam.android.svc.lotto.ui
 import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.ui.controller.ClipBoardCopyController
 import com.nam.android.svc.lotto.ui.controller.RemoveBallController
+import com.nam.android.svc.lotto.ui.controller.ShuffleController
 import com.nam.android.svc.lotto.ui.dialog.select.SelectDialogCreator
+import com.nam.android.svc.lotto.ui.dialog.select.SelectMode
 import com.nam.android.svc.lotto.vo.Ball
 import com.nam.android.svc.lotto.vo.BallPool
 import com.naver.android.svc.core.controltower.ControlTower
-import com.nam.android.svc.lotto.ui.dialog.select.SelectMode
 import kotlinx.coroutines.Job
 import java.util.*
 
@@ -19,11 +20,14 @@ class MainControlTower(screen: MainActivity, views: MainViews) : ControlTower<Ma
     MainViewsAction,
     SelectDialogCreator,
     RemoveBallController,
-    ClipBoardCopyController {
+    ClipBoardCopyController,
+    ShuffleController {
 
     override var type: SelectMode? = null
     override var count = 0
-    override var job: Job? = null
+    override var removeJob: Job? = null
+    override var isShuffling: Boolean = false
+    override var shufflingJob: Job? = null
 
     override val vm by lazy { ViewModelProviders.of(screen).get(MainViewModel::class.java) }
 
@@ -55,8 +59,7 @@ class MainControlTower(screen: MainActivity, views: MainViews) : ControlTower<Ma
     }
 
     fun onClickShuffle() {
-        vm.candidates.value?.shuffle()
-        vm.candidates.value = vm.candidates.value
+        toggleShuffle()
     }
 
     fun onClickCopy() {
