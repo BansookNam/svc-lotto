@@ -1,10 +1,11 @@
-package com.nam.android.svc.lotto.ui.tabs.selections
+package com.nam.android.svc.lotto.ui.tabs.canditates
 
 import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.MainActivity
 import com.nam.android.svc.lotto.ui.MainViewModel
 import com.nam.android.svc.lotto.ui.tabs.BallViewsAction
+import com.nam.android.svc.lotto.ui.tabs.selections.SVC_CandidatesControlTower
 import com.nam.android.svc.lotto.vo.Ball
 import com.naver.android.svc.annotation.ControlTower
 import com.naver.android.svc.annotation.RequireScreen

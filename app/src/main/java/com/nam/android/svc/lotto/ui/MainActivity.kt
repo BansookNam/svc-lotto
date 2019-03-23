@@ -6,7 +6,7 @@ import com.nam.android.svc.lotto.R
 import com.naver.android.svc.annotation.RequireControlTower
 import com.naver.android.svc.annotation.RequireViews
 import com.naver.android.svc.annotation.SvcActivity
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialog
+import com.nam.android.svc.lotto.ui.dialog.select.SelectTypeDialog
 
 
 @SvcActivity

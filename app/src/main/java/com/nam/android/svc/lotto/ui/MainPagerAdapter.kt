@@ -3,7 +3,7 @@ package com.nam.android.svc.lotto.ui
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.nam.android.svc.lotto.ui.tabs.selections.CandidatesFragment
+import com.nam.android.svc.lotto.ui.tabs.canditates.CandidatesFragment
 import com.nam.android.svc.lotto.ui.tabs.selections.SelectionsFragment
 
 class MainPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {

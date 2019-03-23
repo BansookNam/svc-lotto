@@ -1,4 +1,4 @@
-package com.naver.android.svc.svcpeoplelotto.ui.dialog.select
+package com.nam.android.svc.lotto.ui.dialog.select
 
 import com.naver.android.svc.core.views.ViewsAction
 

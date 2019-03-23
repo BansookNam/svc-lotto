@@ -1,7 +1,6 @@
-package com.naver.android.svc.svcpeoplelotto.ui.dialog.member
+package com.nam.android.svc.lotto.ui.dialog.remove
 
 import com.nam.android.svc.lotto.R
-import com.naver.android.svc.core.screen.Screen
 import com.naver.android.svc.core.views.Views
 import kotlinx.android.synthetic.main.dialog_remove.view.*
 

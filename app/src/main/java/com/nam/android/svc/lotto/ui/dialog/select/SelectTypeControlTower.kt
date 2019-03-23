@@ -5,9 +5,6 @@ import com.naver.android.svc.annotation.ControlTower
 import com.naver.android.svc.annotation.RequireListener
 import com.naver.android.svc.annotation.RequireScreen
 import com.naver.android.svc.annotation.RequireViews
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialog
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeViews
 
 /**
  * @author bs.nam@navercorp.com
