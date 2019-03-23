@@ -2,6 +2,7 @@ package com.nam.android.svc.lotto.ui.tabs.canditates
 
 import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.R
+import com.nam.android.svc.lotto.ui.MainActivity
 import com.nam.android.svc.lotto.ui.MainViewModel
 import com.nam.android.svc.lotto.ui.tabs.BallViewsAction
 import com.nam.android.svc.lotto.vo.Ball
@@ -32,5 +33,7 @@ class CandidatesControlTower(screen: CandidatesFragment, views: CandidatesViews)
 
         vm.candidates.value?.remove(ball)
         vm.candidates.value = vm.candidates.value
+
+        (screen.hostActivity as MainActivity).setReloadMenuItemVisible(true)
     }
 }

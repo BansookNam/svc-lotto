@@ -71,7 +71,7 @@ interface RemoveBallController {
         }
     }
 
-    fun finishRandom() {
+    private fun finishRandom() {
         showToast(R.string.finishSelecting)
         type = null
         vm.selectCount = 0

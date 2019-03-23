@@ -28,7 +28,7 @@ interface ShuffleController {
         }
     }
 
-    suspend fun startAutoShuffling(delayTime: Long) {
+    private suspend fun startAutoShuffling(delayTime: Long) {
         for (i in 1..999) {
             delay(delayTime)
             doAsync {
