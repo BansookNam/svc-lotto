@@ -3,9 +3,9 @@ package com.nam.android.svc.lotto.ui
 import android.view.Menu
 import android.view.MenuItem
 import com.nam.android.svc.lotto.R
-import com.naver.android.annotation.RequireControlTower
-import com.naver.android.annotation.RequireViews
-import com.naver.android.annotation.SvcActivity
+import com.naver.android.svc.annotation.RequireControlTower
+import com.naver.android.svc.annotation.RequireViews
+import com.naver.android.svc.annotation.SvcActivity
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialog
 
 

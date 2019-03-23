@@ -1,8 +1,8 @@
 package com.nam.android.svc.lotto.ui.tabs.selections
 
-import com.naver.android.annotation.RequireControlTower
-import com.naver.android.annotation.RequireViews
-import com.naver.android.annotation.SvcFragment
+import com.naver.android.svc.annotation.RequireControlTower
+import com.naver.android.svc.annotation.RequireViews
+import com.naver.android.svc.annotation.SvcFragment
 
 /**
  * @author bs.nam@navercorp.com

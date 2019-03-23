@@ -4,9 +4,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.ui.MainViewModel
 import com.nam.android.svc.lotto.ui.tabs.BallViewsAction
 import com.nam.android.svc.lotto.vo.Ball
-import com.naver.android.annotation.ControlTower
-import com.naver.android.annotation.RequireScreen
-import com.naver.android.annotation.RequireViews
+import com.naver.android.svc.annotation.ControlTower
+import com.naver.android.svc.annotation.RequireScreen
+import com.naver.android.svc.annotation.RequireViews
 
 /**
  * @author bs.nam@navercorp.com

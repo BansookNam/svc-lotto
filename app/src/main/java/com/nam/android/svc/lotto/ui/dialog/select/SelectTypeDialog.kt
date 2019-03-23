@@ -1,15 +1,15 @@
 package com.naver.android.svc.svcpeoplelotto.ui.dialog.select
 
 import com.nam.android.svc.lotto.ui.dialog.select.SelectTypeControlTower
-import com.naver.android.annotation.RequireControlTower
-import com.naver.android.annotation.RequireListener
-import com.naver.android.annotation.RequireViews
+import com.naver.android.svc.annotation.RequireControlTower
+import com.naver.android.svc.annotation.RequireListener
+import com.naver.android.svc.annotation.RequireViews
 
 /**
  * @author bs.nam@navercorp.com
  */
 
-@com.naver.android.annotation.SvcDialogFragment
+@com.naver.android.svc.annotation.SvcDialogFragment
 @RequireViews(SelectTypeViews::class)
 @RequireControlTower(SelectTypeControlTower::class)
 @RequireListener(SelectTypeDialogListener::class)

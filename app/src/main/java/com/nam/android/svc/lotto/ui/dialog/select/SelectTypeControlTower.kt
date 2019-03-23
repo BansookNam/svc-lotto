@@ -1,10 +1,10 @@
 package com.nam.android.svc.lotto.ui.dialog.select
 
 import com.nam.android.svc.lotto.R
-import com.naver.android.annotation.ControlTower
-import com.naver.android.annotation.RequireListener
-import com.naver.android.annotation.RequireScreen
-import com.naver.android.annotation.RequireViews
+import com.naver.android.svc.annotation.ControlTower
+import com.naver.android.svc.annotation.RequireListener
+import com.naver.android.svc.annotation.RequireScreen
+import com.naver.android.svc.annotation.RequireViews
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialog
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeDialogListener
 import com.naver.android.svc.svcpeoplelotto.ui.dialog.select.SelectTypeViews
