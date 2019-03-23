@@ -2,7 +2,6 @@ package com.nam.android.svc.lotto.ui.tabs.canditates
 
 import com.nam.android.svc.lotto.ui.dialog.remove.RemoveDialog
 import com.nam.android.svc.lotto.ui.dialog.remove.RemoveDialogListener
-import com.nam.android.svc.lotto.ui.tabs.selections.SVC_CandidatesFragment
 import com.nam.android.svc.lotto.vo.Ball
 import com.naver.android.svc.annotation.RequireControlTower
 import com.naver.android.svc.annotation.RequireViews

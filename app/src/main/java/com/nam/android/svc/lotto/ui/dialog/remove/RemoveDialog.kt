@@ -8,7 +8,6 @@ import com.naver.android.svc.annotation.RequireListener
 import com.naver.android.svc.annotation.RequireViews
 import com.naver.android.svc.annotation.SvcDialogFragment
 import com.naver.android.svc.core.controltower.EmptyControlTower
-import com.naver.android.svc.svcpeoplelotto.ui.dialog.member.SVC_RemoveDialog
 
 /**
  * @author bs.nam@navercorp.com
