@@ -2,11 +2,11 @@ package com.nam.android.svc.lotto.ui
 
 import androidx.lifecycle.ViewModelProviders
 import com.nam.android.svc.lotto.ui.controller.ClipBoardCopyController
+import com.nam.android.svc.lotto.ui.controller.ReloadController
 import com.nam.android.svc.lotto.ui.controller.RemoveBallController
 import com.nam.android.svc.lotto.ui.controller.ShuffleController
 import com.nam.android.svc.lotto.ui.dialog.select.SelectDialogCreator
 import com.nam.android.svc.lotto.ui.dialog.select.SelectMode
-import com.nam.android.svc.lotto.vo.Ball
 import com.nam.android.svc.lotto.vo.BallPool
 import com.naver.android.svc.annotation.ControlTower
 import com.naver.android.svc.annotation.RequireScreen
@@ -26,7 +26,8 @@ class MainControlTower : SVC_MainControlTower(),
     SelectDialogCreator,
     RemoveBallController,
     ClipBoardCopyController,
-    ShuffleController {
+    ShuffleController,
+    ReloadController{
 
     override var type: SelectMode? = null
     override var count = 0
@@ -68,15 +69,11 @@ class MainControlTower : SVC_MainControlTower(),
     }
 
     fun onClickCopy() {
-        super.copy()
+        copy()
     }
 
     fun onClickReload() {
-        val selections: MutableList<Ball> = vm.selections.value ?: ArrayList()
-        val candidates: MutableList<Ball> = vm.candidates.value ?: ArrayList()
-        candidates.addAll(selections)
-        vm.candidates.value = candidates
-        vm.selections.value = ArrayList()
+        reload()
     }
 
     override fun removeRandoms() {
