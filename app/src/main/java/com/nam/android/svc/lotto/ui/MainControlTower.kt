@@ -40,9 +40,7 @@ class MainControlTower : SVC_MainControlTower(),
     val selectTypeListener = createDialogListener()
 
     override fun onCreated() {
-        val candidates = BallPool.createBalls()
-
-        vm.candidates.value = candidates
+        vm.candidates.value = BallPool.createBalls()
         vm.selections.value = ArrayList()
 
         vm.selections.observe(screen, androidx.lifecycle.Observer {
@@ -60,7 +58,6 @@ class MainControlTower : SVC_MainControlTower(),
             SelectMode.JIT -> return
             SelectMode.SQ -> return
             SelectMode.THUMB -> removeRandomOne()
-            null -> screen.showSelectTypeDialog()
         }
     }
 
