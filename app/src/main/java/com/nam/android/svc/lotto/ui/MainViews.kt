@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.nam.android.svc.lotto.R
 import com.nam.android.svc.lotto.ui.common.animation.CircleAnimation
-import com.nam.android.svc.lotto.ui.controller.IndexProvideViews
 import com.nam.android.svc.lotto.vo.Ball
 import com.naver.android.svc.core.views.ActionViews
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -19,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 /**
  * @author bs.nam@navercorp.com
  */
-class MainViews : ActionViews<MainViewsAction>(), IndexProvideViews {
+class MainViews : ActionViews<MainViewsAction>() {
     override val layoutResId: Int get() =  R.layout.activity_main
 
     private val vm by lazy { ViewModelProviders.of(screen.hostActivity!!).get(MainViewModel::class.java) }
@@ -149,7 +148,7 @@ class MainViews : ActionViews<MainViewsAction>(), IndexProvideViews {
         }
     }
 
-    override fun getCurrentItem(): Int {
+    fun getCurrentItem(): Int {
         return rootView.viewPager.currentItem
     }
 }
