@@ -12,8 +12,13 @@ import com.nam.android.svc.lotto.vo.Ball
  */
 class CandidatesViews : AbsBallListViews() {
 
-    private val vm by lazy { ViewModelProviders.of(screen.hostActivity!!).get(MainViewModel::class.java) }
+    private val vm by lazy {
+        ViewModelProviders
+            .of(screen.hostActivity!!)
+            .get(MainViewModel::class.java)
+    }
 
     override val ballList: MutableLiveData<MutableList<Ball>>
         get() = vm.candidates
 }
+
