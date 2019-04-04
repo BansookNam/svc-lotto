@@ -26,7 +26,7 @@ class CandidatesControlTower :
     }
 
     override fun onClickBall(member: Ball) {
-        screen.showMemberDialog(member)
+        screen.showRemoveDialog(member)
     }
 
     fun removeBall(ball: Ball) {
