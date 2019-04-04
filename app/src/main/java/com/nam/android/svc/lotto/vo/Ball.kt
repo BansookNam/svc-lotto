@@ -6,6 +6,5 @@ data class Ball
 @JvmOverloads
 constructor(
     val number: Int,
-    @ColorInt val color: Int,
-    var isSelected: Boolean = false
+    @ColorInt val color: Int
 )
