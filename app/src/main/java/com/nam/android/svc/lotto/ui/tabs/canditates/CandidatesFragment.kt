@@ -16,7 +16,7 @@ import com.naver.android.svc.annotation.SvcFragment
 class CandidatesFragment : SVC_CandidatesFragment() {
 
     fun showMemberDialog(ball: Ball) {
-        val dialog = RemoveDialog.newInstance(ball.number)
+        val dialog = RemoveDialog.newInstance(ball.number, ball.color)
         dialog.dialogListener = object : RemoveDialogListener {
             override fun onClickRemoveBall() {
                 controlTower.removeBall(ball)
@@ -25,3 +25,4 @@ class CandidatesFragment : SVC_CandidatesFragment() {
         showDialog(dialog)
     }
 }
+

@@ -11,5 +11,6 @@ import com.naver.android.svc.annotation.SvcFragment
 @RequireViews(SelectionsViews::class)
 @RequireControlTower(SelectionsControlTower::class)
 class SelectionsFragment : SVC_SelectionsFragment(){
-
 }
+
+

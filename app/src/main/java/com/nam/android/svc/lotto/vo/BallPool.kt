@@ -10,7 +10,7 @@ object BallPool {
     fun createBalls(): MutableList<Ball> {
         val list = ArrayList<Ball>()
         for (i in 1..45) {
-            list.add(Ball(i, getRandomColor(), false))
+            list.add(Ball(i, getRandomColor()))
         }
         return list
     }

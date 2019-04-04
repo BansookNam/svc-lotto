@@ -1,5 +1,8 @@
 package com.nam.android.svc.lotto.ui.dialog.remove
 
+import android.graphics.PorterDuff
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.OvalShape
 import com.nam.android.svc.lotto.R
 import com.naver.android.svc.core.views.Views
 import kotlinx.android.synthetic.main.dialog_remove.view.*
@@ -31,5 +34,11 @@ class RemoveViews : Views() {
 
     fun setNumber(number: Int) {
         rootView.ball_num.text = number.toString()
+    }
+
+    fun setColor(colorInt: Int) {
+        rootView.ball_num.background = ShapeDrawable(OvalShape()).apply {
+            setColorFilter(colorInt, PorterDuff.Mode.SRC_IN)
+        }
     }
 }
